@@ -1,0 +1,28 @@
+{
+  "name": "camaraderie",
+  "version": "1.0.0",
+  "description": "The project of the website of a simple partnership",
+  "private": true,
+  "homepage": "https://github.com/Vivendum/camaraderie#readme",
+  "bugs": {
+    "url": "https://github.com/Vivendum/camaraderie/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vivendum/camaraderie.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Vivendum",
+    "email": "vivendum@mail.ru",
+    "url": "https://vivendum.github.io/present-myself"
+  },
+  "engines": {
+    "node": "24.x.x",
+    "npm": "11.x.x"
+  },
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

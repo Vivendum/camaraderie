@@ -22,7 +22,13 @@
     "npm": "11.x.x"
   },
   "type": "module",
+  "main": "gulpfile.js",
+  "devDependencies": {
+    "gulp": "5.x.x",
+    "gulp-nunjucks-render": "2.x.x"
+  },
   "scripts": {
+    "build": "gulp build",
     "test": "echo \"Error: no test specified\" && exit 1"
   }
 }

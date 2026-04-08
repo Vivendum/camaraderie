@@ -1,0 +1,11 @@
+{
+  "page": {
+    "take": {
+      "template":"source/template/",
+      "initial": "source/template/*.html"
+    },
+    "build": {
+      "gap": "build/gap"
+    }
+  }
+}

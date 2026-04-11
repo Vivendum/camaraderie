@@ -6,6 +6,9 @@
     },
     "build": {
       "gap": "build/gap"
+    },
+    "check": {
+      "gap": "build/gap/*.html"
     }
   }
 }

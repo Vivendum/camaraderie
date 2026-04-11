@@ -2,5 +2,5 @@
   "trimBlocks": true,
   "lstripBlocks": true,
   "autoescape": false,
-  "throwOnUndefined": false
+  "throwOnUndefined": true
 }

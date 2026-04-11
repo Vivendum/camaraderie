@@ -32,7 +32,7 @@ export const build_html = () => {
     .pipe(error_warning())
     .pipe(html_compile({
       path: path.page.take.template,
-      envOptions: config_nunjucks //  Разобраться как настроить throwOnUndefined
+      envOptions: config_nunjucks
     }))
     .pipe(gulp.dest(path.page.build.gap));
 };

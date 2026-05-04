@@ -1,0 +1,17 @@
+{
+  "asciiquotes": true,
+  "skip-info-messages": false,
+  "errors-only": false,
+  "Werror": true,
+  "exit-zero-always": false,
+  "stdout": false,
+  "filterfile": false,
+  "filterpattern": false,
+  "format": "text",
+  "html": true,
+  "also-check-css": true,
+  "also-check-svg": true,
+  "no-langdetect": false,
+  "no-stream": true,
+  "verbose": true
+}

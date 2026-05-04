@@ -3,12 +3,14 @@ import error_signal from "gulp-plumber";
 import error_ring from "gulp-notify";
 import html_compile from "gulp-nunjucks-render";
 import html_lint from "gulp-htmlhint";
+import html_valid from "gulp-html";
 
 // Setting
 
 import path from "./setting/path.json" with {type: "json"};
 import config_nunjucks from "./setting/config-nunjucks.json" with {type: "json"};
 import config_htmlhint from "./setting/config-htmlhint.json" with {type: "json"};
+import config_vnu from "./setting/config-vnu.json" with {type: "json"};
 
 // Error
 
@@ -47,11 +49,21 @@ export const lint_html = () => {
     .pipe(html_lint.reporter());
 };
 
+export const valid_html_from_gap = () => {
+  return gulp.src(path.page.check.gap)
+    .pipe(html_valid(config_vnu));
+};
+
 // Instruction
 
 export const lint =
   gulp.parallel(
     lint_html
+);
+
+export const valid =
+  gulp.series(
+    valid_html_from_gap
 );
 
 export const build =

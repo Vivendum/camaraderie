@@ -25,6 +25,7 @@
   "main": "gulpfile.js",
   "devDependencies": {
     "gulp": "5.x.x",
+    "gulp-html": "6.x.x",
     "gulp-htmlhint": "4.x.x",
     "gulp-notify": "5.x.x",
     "gulp-nunjucks-render": "2.x.x",
@@ -32,6 +33,7 @@
   },
   "scripts": {
     "build": "gulp build",
-    "test": "gulp lint"
+    "test": "gulp lint",
+    "valid": "gulp valid"
   }
 }

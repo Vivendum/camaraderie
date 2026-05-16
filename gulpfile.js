@@ -16,7 +16,7 @@ import config_htmlminifier from "./setting/config-htmlminifier.json" with {type:
 
 // Error
 
-export const error_warning = () => {
+export const warning_error = () => {
   return error_signal({
     errorHandler(error) {
       error_ring.onError({
@@ -35,7 +35,7 @@ export const error_warning = () => {
 
 export const build_html = () => {
   return gulp.src(path.page.take.initial)
-    .pipe(error_warning())
+    .pipe(warning_error())
     .pipe(html_compile({
       path: path.page.take.template,
       envOptions: config_nunjucks
@@ -56,15 +56,30 @@ export const valid_html_from_gap = () => {
     .pipe(html_valid(config_vnu));
 };
 
+export const valid_html_from_end = () => {
+  return gulp.src(path.page.check.end)
+    .pipe(html_valid(config_vnu));
+};
+
 // Optimize
 
 export const min_html = () => {
-  return gulp.src(path.page.check.gap)
+  return gulp.src(path.page.fix.gap)
     .pipe(html_min(config_htmlminifier)) // Настроить minifyCSS, minifyJS и minifyURLs
     .pipe(gulp.dest(path.page.build.end))
 };
 
 // Instruction
+
+export const build =
+  gulp.parallel(
+    build_html
+);
+
+export const optimize =
+  gulp.parallel(
+    min_html
+);
 
 export const lint =
   gulp.parallel(
@@ -73,17 +88,6 @@ export const lint =
 
 export const valid =
   gulp.series(
-    valid_html_from_gap
+    valid_html_from_gap,
+    valid_html_from_end
 );
-
-export const optimize =
-  gulp.series(
-    min_html
-);
-
-export const build =
-  gulp.parallel(
-    build_html
-);
-
-// заменить check на более смысловой fix

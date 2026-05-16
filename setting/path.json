@@ -9,6 +9,10 @@
       "end": "build/end"
     },
     "check": {
+      "gap": "build/gap/*.html",
+      "end": "build/end/*.html"
+    },
+    "fix": {
       "gap": "build/gap/*.html"
     }
   }

@@ -33,9 +33,11 @@
     "gulp-plumber": "1.x.x"
   },
   "scripts": {
+    "gulp": "gulp",
     "build": "gulp build",
-    "test": "gulp lint",
+    "optimize": "gulp optimize",
+    "lint": "gulp lint",
     "valid": "gulp valid",
-    "min": "gulp optimize"
+    "test": "gulp lint && gulp valid"
   }
 }

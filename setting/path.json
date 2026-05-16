@@ -5,7 +5,8 @@
       "initial": "source/template/*.html"
     },
     "build": {
-      "gap": "build/gap"
+      "gap": "build/gap",
+      "end": "build/end"
     },
     "check": {
       "gap": "build/gap/*.html"

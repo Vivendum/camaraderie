@@ -4,6 +4,7 @@ import error_ring from "gulp-notify";
 import html_compile from "gulp-nunjucks-render";
 import html_lint from "gulp-htmlhint";
 import html_valid from "gulp-html";
+import html_min from "gulp-html-minifier-terser";
 
 // Setting
 
@@ -11,6 +12,7 @@ import path from "./setting/path.json" with {type: "json"};
 import config_nunjucks from "./setting/config-nunjucks.json" with {type: "json"};
 import config_htmlhint from "./setting/config-htmlhint.json" with {type: "json"};
 import config_vnu from "./setting/config-vnu.json" with {type: "json"};
+import config_htmlminifier from "./setting/config-htmlminifier.json" with {type: "json"};
 
 // Error
 
@@ -54,6 +56,14 @@ export const valid_html_from_gap = () => {
     .pipe(html_valid(config_vnu));
 };
 
+// Optimize
+
+export const min_html = () => {
+  return gulp.src(path.page.check.gap)
+    .pipe(html_min(config_htmlminifier)) // Настроить minifyCSS, minifyJS и minifyURLs
+    .pipe(gulp.dest(path.page.build.end))
+};
+
 // Instruction
 
 export const lint =
@@ -66,7 +76,14 @@ export const valid =
     valid_html_from_gap
 );
 
+export const optimize =
+  gulp.series(
+    min_html
+);
+
 export const build =
   gulp.parallel(
     build_html
 );
+
+// заменить check на более смысловой fix
